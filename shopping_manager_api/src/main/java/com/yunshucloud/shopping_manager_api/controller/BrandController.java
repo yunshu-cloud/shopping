@@ -1,6 +1,7 @@
 package com.yunshucloud.shopping_manager_api.controller;
 
 import com.yunshucloud.shopping_common.pojo.Brand;
+import com.yunshucloud.shopping_common.result.BaseResult;
 import com.yunshucloud.shopping_common.service.BrandService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +17,9 @@ public class BrandController {
 
 
     @GetMapping("/findById")
-    public Brand findById(Long id){
+    public BaseResult<Brand> findById(Long id){
         Brand brand = brandService.findById(id);
-        return brand;
+        return BaseResult.ok(brand);
     }
 }
 

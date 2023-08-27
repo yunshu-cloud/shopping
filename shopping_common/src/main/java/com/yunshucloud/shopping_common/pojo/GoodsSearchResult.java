@@ -12,7 +12,7 @@ import java.util.Set;
  */
 @Data
 public class GoodsSearchResult implements Serializable {
-    private Page<GoodsES> goodsPage; // 页面商品信息
+//    private Page<GoodsES> goodsPage; // 页面商品信息
     private GoodsSearchParam goodsSearchParam; // 搜索条件回显
 
     private Set<String> brands; // 和商品有关的品牌列表

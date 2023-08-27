@@ -20,6 +20,7 @@
         <!-- 通用模块，包含实体类、服务接口、工具类等 -->
         <module>shopping_common</module>
         <module>shopping_goods_service</module>
+        <module>shopping_manager_api</module>
     </modules>
 
 

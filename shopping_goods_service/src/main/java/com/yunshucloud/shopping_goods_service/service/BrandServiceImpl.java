@@ -5,8 +5,10 @@ import com.yunshucloud.shopping_common.service.BrandService;
 import com.yunshucloud.shopping_goods_service.mapper.BrandMapper;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 @DubboService
+@Transactional
 public class BrandServiceImpl implements BrandService {
     @Autowired
     private BrandMapper brandMapper;

@@ -2,30 +2,31 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/shopping_common/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Address.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Admin.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Area.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Brand.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/CartGoods.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Category.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/City.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Goods.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/GoodsDesc.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/GoodsES.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/GoodsImage.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/GoodsSearchParam.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/GoodsSearchResult.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Orders.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Payment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Permission.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/ProductType.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Province.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Role.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/SeckillGoods.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/ShoppingUser.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Specification.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/SpecificationOption.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/SpecificationOptions.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Address.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Admin.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Area.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Brand.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/CartGoods.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Category.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/City.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Goods.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/GoodsDesc.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/GoodsES.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/GoodsImage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/GoodsSearchParam.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/GoodsSearchResult.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Orders.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Payment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Permission.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/ProductType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Province.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Role.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/SeckillGoods.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/ShoppingUser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/Specification.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/SpecificationOption.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_common/src/main/java/com/yunshucloud/shopping_common/pojo/SpecificationOptions.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopping_goods_service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

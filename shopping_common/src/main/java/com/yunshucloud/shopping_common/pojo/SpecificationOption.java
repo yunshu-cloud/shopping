@@ -6,7 +6,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 规格项
+ * 规格项--商品属性参数
  */
 @Data
 public class SpecificationOption implements Serializable{

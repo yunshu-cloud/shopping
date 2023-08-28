@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * 规格
+ * 规格--商品属性名称
  */
 @Data
 public class Specification implements Serializable{

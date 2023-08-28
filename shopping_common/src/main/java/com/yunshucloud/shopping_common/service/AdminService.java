@@ -2,6 +2,9 @@ package com.yunshucloud.shopping_common.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yunshucloud.shopping_common.pojo.Admin;
+import com.yunshucloud.shopping_common.pojo.Permission;
+
+import java.util.List;
 
 // 管理员服务
 public interface AdminService {
@@ -19,6 +22,10 @@ public interface AdminService {
     void updateRoleToAdmin(Long aid, Long[] rids);
 
 
+    // 根据名字查询管理员
+    Admin findByAdminName(String username);
+    // 根据名字查询管理员所有权限
+    List<Permission> findAllPermission(String username);
 
 
 

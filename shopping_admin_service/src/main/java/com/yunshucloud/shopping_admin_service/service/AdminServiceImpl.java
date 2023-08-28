@@ -1,11 +1,15 @@
 package com.yunshucloud.shopping_admin_service.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yunshucloud.shopping_admin_service.mapper.AdminMapper;
 import com.yunshucloud.shopping_common.pojo.Admin;
+import com.yunshucloud.shopping_common.pojo.Permission;
 import com.yunshucloud.shopping_common.service.AdminService;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 @DubboService
 public class AdminServiceImpl implements AdminService {
@@ -49,5 +53,18 @@ public class AdminServiceImpl implements AdminService {
         for (Long rid : rids) {
             adminMapper.addRoleToAdmin(aid, rid);
         }
+    }
+
+    @Override
+    public Admin findByAdminName(String username) {
+        QueryWrapper<Admin> wrapper = new QueryWrapper<>();
+        wrapper.eq("username",username);
+        Admin admin = adminMapper.selectOne(wrapper);
+        return admin;
+    }
+
+    @Override
+    public List<Permission> findAllPermission(String username) {
+        return adminMapper.findAllPermission(username);
     }
 }

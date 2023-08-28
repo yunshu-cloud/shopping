@@ -2,7 +2,10 @@ package com.yunshucloud.shopping_admin_service.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.yunshucloud.shopping_common.pojo.Admin;
+import com.yunshucloud.shopping_common.pojo.Permission;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface AdminMapper extends BaseMapper<Admin> {
 
@@ -14,5 +17,9 @@ public interface AdminMapper extends BaseMapper<Admin> {
 
     // 给管理员添加角色
     void addRoleToAdmin(@Param("aid") Long aid, @Param("rid") Long rid);
+
+    // 根据管理员名查询权限
+    List<Permission> findAllPermission(String username);
+
 }
 

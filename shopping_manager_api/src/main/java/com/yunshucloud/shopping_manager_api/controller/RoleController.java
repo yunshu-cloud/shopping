@@ -5,6 +5,7 @@ import com.yunshucloud.shopping_common.pojo.Role;
 import com.yunshucloud.shopping_common.result.BaseResult;
 import com.yunshucloud.shopping_common.service.RoleService;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -79,6 +80,7 @@ public class RoleController {
      * @return 查询结果
      */
     @GetMapping("/search")
+    @PreAuthorize("hasAnyAuthority('/role/search')")
     public BaseResult<Page<Role>> search(int page, int size) {
         Page<Role> page1 = roleService.search(page, size);
         return BaseResult.ok(page1);

@@ -5,6 +5,10 @@ import com.yunshucloud.shopping_common.pojo.Admin;
 import com.yunshucloud.shopping_common.result.BaseResult;
 import com.yunshucloud.shopping_common.service.AdminService;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -16,26 +20,35 @@ public class AdminController {
     @DubboReference
     private AdminService adminService;
 
+    @Autowired
+    private PasswordEncoder encoder;
+
     /**
      * 新增管理员
-     *
      * @param admin 管理员对象
      * @return 执行结果
      */
     @PostMapping("/add")
     public BaseResult add(@RequestBody Admin admin) {
+        String password = admin.getPassword();
+        password = encoder.encode(password);
+        admin.setPassword(password);
         adminService.add(admin);
         return BaseResult.ok();
     }
 
     /**
      * 修改管理员
-     *
      * @param admin 管理员对象
      * @return 执行结果
      */
     @PutMapping("/update")
     public BaseResult update(@RequestBody Admin admin) {
+        String password = admin.getPassword();
+        if (StringUtils.hasText(password)){ // 密码不为空加密
+            password = encoder.encode(password);
+            admin.setPassword(password);
+        }
         adminService.update(admin);
         return BaseResult.ok();
     }
@@ -74,6 +87,7 @@ public class AdminController {
      * @return 查询结果
      */
     @GetMapping("/search")
+    @PreAuthorize("hasAnyAuthority('/admin/search')")
     public BaseResult<Page<Admin>> search(int page, int size) {
         Page<Admin> adminPage = adminService.search(page, size);
         return BaseResult.ok(adminPage);

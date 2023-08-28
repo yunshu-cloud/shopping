@@ -15,7 +15,7 @@ public class MyAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
         response.setContentType("text/json;charset=utf-8");
-        BaseResult result = new BaseResult(401, "用户名未登录", null);
+        BaseResult result = new BaseResult(401, "用户未登录", null);
         response.getWriter().write(JSON.toJSONString(result));
     }
 }

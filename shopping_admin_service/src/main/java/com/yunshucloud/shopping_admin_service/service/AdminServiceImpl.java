@@ -8,6 +8,7 @@ import com.yunshucloud.shopping_common.pojo.Permission;
 import com.yunshucloud.shopping_common.service.AdminService;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -21,12 +22,6 @@ public class AdminServiceImpl implements AdminService {
     public void add(Admin admin) {
         adminMapper.insert(admin);
     }
-
-    @Override
-    public void update(Admin admin) {
-        adminMapper.updateById(admin);
-    }
-
 
     @Override
     public void delete(Long id) {
@@ -66,5 +61,18 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public List<Permission> findAllPermission(String username) {
         return adminMapper.findAllPermission(username);
+    }
+
+
+
+    @Override
+    public void update(Admin admin) {
+        // 如果前端传来空密码，则密码还是原来的密码
+        if(!StringUtils.hasText(admin.getPassword())){
+            // 查询原来的密码
+            String password = adminMapper.selectById(admin.getAid()).getPassword();
+            admin.setPassword(password);
+        }
+        adminMapper.updateById(admin);
     }
 }

@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="shopping_manager_api" />
         <module name="shopping_common" />
+        <module name="shopping_file_service" />
         <module name="shopping_goods_service" />
         <module name="shopping_admin_service" />
       </profile>
@@ -19,6 +20,7 @@
       <module name="shopping" options="-parameters" />
       <module name="shopping_admin_service" options="-parameters" />
       <module name="shopping_common" options="-parameters" />
+      <module name="shopping_file_service" options="-parameters" />
       <module name="shopping_goods_service" options="-parameters" />
       <module name="shopping_manager_api" options="-parameters" />
     </option>

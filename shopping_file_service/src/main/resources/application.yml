@@ -1,0 +1,32 @@
+
+# \u7AEF\u53E3\u53F7
+server:
+  port: 9003
+
+
+# \u65E5\u5FD7\u683C\u5F0F
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+
+dubbo:
+  application:
+    name: shopping_file_service # \u9879\u76EE\u540D
+  registry:
+    address: zookeeper://192.168.66.100 # \u6CE8\u518C\u4E2D\u5FC3\u5730\u5740
+    port: 2181    # \u6CE8\u518C\u4E2D\u5FC3\u7684\u7AEF\u53E3
+    timeout: 10000 # \u6CE8\u518C\u5230zk\u4E0A\u8D85\u65F6\u65F6\u95F4\uFF0Cms
+  protocol:
+    name: dubbo # dubbo\u4F7F\u7528\u7684\u534F\u8BAE
+    port: -1 # dubbo\u81EA\u52A8\u5206\u914D\u7AEF\u53E3
+  scan:
+    base-packages: com.yunshucloud.shopping_file_service.service # \u5305\u626B\u63CF
+
+
+fdfs:
+  so-timeout: 3000
+  connect-timeout: 6000
+  tracker-list: # TrackerList\u8DEF\u5F84
+    - 192.168.66.100:22122
+  fileUrl: http://192.168.66.100 # \u81EA\u5B9A\u4E49\u914D\u7F6E\uFF0C\u6587\u4EF6\u8BBF\u95EE\u8DEF\u5F84

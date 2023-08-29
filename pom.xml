@@ -22,6 +22,7 @@
         <module>shopping_goods_service</module>
         <module>shopping_manager_api</module>
         <module>shopping_admin_service</module>
+        <module>shopping_file_service</module>
     </modules>
 
 

@@ -1,0 +1,48 @@
+# ???
+server:
+  port: 9001
+
+
+# ????
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+
+# ??Mybatis-plus
+mybatis-plus:
+  global-config:
+    db-config:
+      # ????
+      table-prefix: bz_
+      # ?????????
+      id-type: auto
+  configuration:
+    # ??????????????
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # ??sql??
+
+
+spring:
+  # ???
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///baizhanshopping?serverTimezone=UTC
+    username: root
+    password: root@1234
+
+
+dubbo:
+  application:
+    name: shopping_goods_service # ???
+  registry:
+    address: zookeeper://192.168.66.100 # ??????
+    port: 2181 # ???????
+    timeout: 10000 # ???zk?????,ms
+  protocol:
+    name: dubbo # dubbo?????
+    port: -1 # ??????
+  scan:
+    base-packages: com.yunshucloud.shopping_goods_service.service # ???
+
+

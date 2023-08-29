@@ -16,7 +16,8 @@ public enum CodeEnum {
     // 业务异常
     PARAMETER_ERROR(601,"参数异常"),
     INSERT_PRODUCT_TYPE_ERROR(602,"该商品类型不能添加子类型"),
-    DELETE_PRODUCT_TYPE_ERROR(603,"该商品有子类型，无法删除")
+    DELETE_PRODUCT_TYPE_ERROR(603,"该商品有子类型，无法删除"),
+    UPLOAD_FILE_ERROR(604,"文件上传失败")
     ;
 
     private final Integer code;

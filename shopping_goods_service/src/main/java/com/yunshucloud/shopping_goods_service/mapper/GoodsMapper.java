@@ -6,5 +6,5 @@ import org.apache.ibatis.annotations.Param;
 
 public interface GoodsMapper extends BaseMapper<Goods> {
     // 添加商品_规格数据
-    void addGoodsSpecification(@Param("gid") Long gid,@Param("optionId")Long optionId);
+    void addGoodsSpecificationOption(@Param("gid") Long gid,@Param("optionId")Long optionId);
 }

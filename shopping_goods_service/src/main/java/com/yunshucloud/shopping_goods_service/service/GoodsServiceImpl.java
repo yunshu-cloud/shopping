@@ -8,11 +8,12 @@ import com.yunshucloud.shopping_common.pojo.SpecificationOption;
 import com.yunshucloud.shopping_common.service.GoodsService;
 import com.yunshucloud.shopping_goods_service.mapper.GoodsImageMapper;
 import com.yunshucloud.shopping_goods_service.mapper.GoodsMapper;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@DubboService
 public class GoodsServiceImpl implements GoodsService {
     @Autowired
     private GoodsMapper goodsMapper;
@@ -42,7 +43,7 @@ public class GoodsServiceImpl implements GoodsService {
         }
 
         for (SpecificationOption option : options){
-            goodsMapper.addGoodsSpecification(goodsId,option.getId());
+            goodsMapper.addGoodsSpecificationOption(goodsId,option.getId());
         }
 
 

@@ -4,10 +4,7 @@ import com.yunshucloud.shopping_common.pojo.Goods;
 import com.yunshucloud.shopping_common.result.BaseResult;
 import com.yunshucloud.shopping_common.service.GoodsService;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品
@@ -23,4 +20,17 @@ public class GoodsController {
         goodsService.add(goods);
         return BaseResult.ok();
     }
+
+    /**
+     * 修改商品
+     *
+     * @param goods 商品实体
+     * @return 执行结果
+     */
+    @PutMapping("/update")
+    public BaseResult update(@RequestBody Goods goods) {
+        goodsService.update(goods);
+        return BaseResult.ok();
+    }
+
 }

@@ -6,4 +6,10 @@
     <insert id="addGoodsSpecificationOption">
         INSERT INTO bz_goods_specification_option VALUES(#{gid},#{optionId})
     </insert>
+
+    <delete id="deleteGoodsSpecificationOption">
+        DELETE FROM bz_goods_specification_option WHERE gid = #{gid}
+    </delete>
+
+
 </mapper>

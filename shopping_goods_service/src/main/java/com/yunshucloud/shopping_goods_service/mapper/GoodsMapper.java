@@ -7,4 +7,9 @@ import org.apache.ibatis.annotations.Param;
 public interface GoodsMapper extends BaseMapper<Goods> {
     // 添加商品_规格数据
     void addGoodsSpecificationOption(@Param("gid") Long gid,@Param("optionId")Long optionId);
+
+    // 删除商品下的所有规格项
+    void deleteGoodsSpecificationOption(Long gid);
+
+
 }

@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="shopping_manager_api" />
         <module name="shopping_common" />
+        <module name="shopping_manager_api" />
         <module name="shopping_file_service" />
         <module name="shopping_goods_service" />
         <module name="shopping_admin_service" />
+        <module name="shopping_category_customer_api" />
         <module name="shopping_category_service" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="shopping" options="-parameters" />
       <module name="shopping_admin_service" options="-parameters" />
+      <module name="shopping_category_customer_api" options="-parameters" />
       <module name="shopping_category_service" options="-parameters" />
       <module name="shopping_common" options="-parameters" />
       <module name="shopping_file_service" options="-parameters" />

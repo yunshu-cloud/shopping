@@ -1,5 +1,6 @@
 package com.yunshucloud.shopping_manager_api.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yunshucloud.shopping_common.pojo.Goods;
 import com.yunshucloud.shopping_common.result.BaseResult;
 import com.yunshucloud.shopping_common.service.GoodsService;
@@ -46,6 +47,33 @@ public class GoodsController {
         goodsService.putAway(id,isMarketable);
         return BaseResult.ok();
     }
+
+
+    /**
+     * 根据id查询商品详情
+     *
+     * @param id 商品id
+     * @return 商品详情
+     */
+    @GetMapping("/findById")
+    public BaseResult<Goods> findById(Long id) {
+        Goods goods = goodsService.findById(id);
+        return BaseResult.ok(goods);
+    }
+
+    /**
+     * 分页查询
+     * @param goods 商品条件对象
+     * @param page 页码
+     * @param size 每页条数
+     * @return 查询结果
+     */
+    @GetMapping("/search")
+    public BaseResult<Page<Goods>> search(Goods goods, int page, int size) {
+        Page<Goods> page1 = goodsService.search(goods, page, size);
+        return BaseResult.ok(page1);
+    }
+
 
 
 }

@@ -14,4 +14,7 @@ public interface GoodsMapper extends BaseMapper<Goods> {
     // 商品上/下架
     void putAway(@Param("id") Long id,@Param("isMarketable") Boolean isMarketable);
 
+    // 根据id查询商品详情
+    Goods findById(Long id);
+
 }

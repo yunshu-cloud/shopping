@@ -11,6 +11,7 @@ import com.yunshucloud.shopping_goods_service.mapper.GoodsImageMapper;
 import com.yunshucloud.shopping_goods_service.mapper.GoodsMapper;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,8 +86,9 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public Goods findById(Long id) {
-        return null;
+        return goodsMapper.findById(id);
     }
+
 
     @Override
     public void putAway(Long id, Boolean isMarketable) {
@@ -96,6 +98,13 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public Page<Goods> search(Goods goods, int page, int size) {
-        return null;
+        QueryWrapper<Goods> queryWrapper = new QueryWrapper();
+        // 判断商品名不为空
+        if (goods != null && StringUtils.hasText(goods.getGoodsName())){
+            queryWrapper.like("goodsName",goods.getGoodsName());
+        }
+        Page<Goods> page1 = goodsMapper.selectPage(new Page(page, size), queryWrapper);
+        return page1;
     }
+
 }

@@ -23,6 +23,7 @@
         <module>shopping_manager_api</module>
         <module>shopping_admin_service</module>
         <module>shopping_file_service</module>
+        <module>shopping_category_service</module>
     </modules>
 
 

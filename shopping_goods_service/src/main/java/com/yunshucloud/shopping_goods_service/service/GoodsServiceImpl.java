@@ -2,10 +2,7 @@ package com.yunshucloud.shopping_goods_service.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.yunshucloud.shopping_common.pojo.Goods;
-import com.yunshucloud.shopping_common.pojo.GoodsImage;
-import com.yunshucloud.shopping_common.pojo.Specification;
-import com.yunshucloud.shopping_common.pojo.SpecificationOption;
+import com.yunshucloud.shopping_common.pojo.*;
 import com.yunshucloud.shopping_common.service.GoodsService;
 import com.yunshucloud.shopping_goods_service.mapper.GoodsImageMapper;
 import com.yunshucloud.shopping_goods_service.mapper.GoodsMapper;
@@ -105,6 +102,12 @@ public class GoodsServiceImpl implements GoodsService {
         }
         Page<Goods> page1 = goodsMapper.selectPage(new Page(page, size), queryWrapper);
         return page1;
+    }
+
+
+    @Override
+    public List<GoodsDesc> findAll() {
+        return goodsMapper.findAll();
     }
 
 }

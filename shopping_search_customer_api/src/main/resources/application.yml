@@ -1,0 +1,22 @@
+
+# \u7AEF\u53E3\u53F7
+server:
+  port: 8004
+
+
+# \u65E5\u5FD7\u683C\u5F0F
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+
+dubbo:
+  application:
+    name: shopping_search_customer_api # \u9879\u76EE\u540D
+  registry:
+    address: zookeeper://192.168.66.100 # \u6CE8\u518C\u4E2D\u5FC3\u5730\u5740
+    port: 2181    # \u6CE8\u518C\u4E2D\u5FC3\u7684\u7AEF\u53E3
+    timeout: 10000 # \u6CE8\u518C\u5230zk\u4E0A\u8D85\u65F6\u65F6\u95F4\uFF0Cms
+  protocol:
+    name: dubbo # dubbo\u4F7F\u7528\u7684\u534F\u8BAE
+    port: -1 # dubbo\u81EA\u52A8\u5206\u914D\u7AEF\u53E3

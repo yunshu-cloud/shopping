@@ -13,6 +13,8 @@
         <module name="shopping_goods_service" />
         <module name="shopping_admin_service" />
         <module name="shopping_category_customer_api" />
+        <module name="shopping_search_service" />
+        <module name="shopping_search_customer_api" />
         <module name="shopping_category_service" />
       </profile>
     </annotationProcessing>
@@ -27,6 +29,8 @@
       <module name="shopping_file_service" options="-parameters" />
       <module name="shopping_goods_service" options="-parameters" />
       <module name="shopping_manager_api" options="-parameters" />
+      <module name="shopping_search_customer_api" options="-parameters" />
+      <module name="shopping_search_service" options="-parameters" />
     </option>
   </component>
 </project>

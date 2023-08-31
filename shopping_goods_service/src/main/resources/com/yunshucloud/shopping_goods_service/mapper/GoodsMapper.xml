@@ -11,5 +11,9 @@
         DELETE FROM bz_goods_specification_option WHERE gid = #{gid}
     </delete>
 
+    <update id="putAway">
+        UPDATE bz_goods SET isMarketable = #{isMarketable} WHERE id = #{id}
+    </update>
+
 
 </mapper>

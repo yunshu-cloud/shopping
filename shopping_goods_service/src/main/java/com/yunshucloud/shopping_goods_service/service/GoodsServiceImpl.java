@@ -90,8 +90,9 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public void putAway(Long id, Boolean isMarketable) {
-
+        goodsMapper.putAway(id,isMarketable);
     }
+
 
     @Override
     public Page<Goods> search(Goods goods, int page, int size) {

@@ -11,5 +11,7 @@ public interface GoodsMapper extends BaseMapper<Goods> {
     // 删除商品下的所有规格项
     void deleteGoodsSpecificationOption(Long gid);
 
+    // 商品上/下架
+    void putAway(@Param("id") Long id,@Param("isMarketable") Boolean isMarketable);
 
 }

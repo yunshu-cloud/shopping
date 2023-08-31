@@ -33,4 +33,19 @@ public class GoodsController {
         return BaseResult.ok();
     }
 
+
+    /**
+     * 上架/下架商品
+     *
+     * @param id 商品id
+     * @param isMarketable 是否上架
+     * @return 执行结果
+     */
+    @PutMapping("/putAway")
+    public BaseResult putAway(Long id,Boolean isMarketable) {
+        goodsService.putAway(id,isMarketable);
+        return BaseResult.ok();
+    }
+
+
 }

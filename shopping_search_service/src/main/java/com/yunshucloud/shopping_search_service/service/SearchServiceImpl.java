@@ -5,6 +5,7 @@ import com.yunshucloud.shopping_common.pojo.GoodsSearchParam;
 import com.yunshucloud.shopping_common.pojo.GoodsSearchResult;
 import com.yunshucloud.shopping_common.service.SearchService;
 import lombok.SneakyThrows;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.AnalyzeRequest;
@@ -13,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@DubboService
 public class SearchServiceImpl implements SearchService {
     @Autowired
     private RestHighLevelClient restHighLevelClient;

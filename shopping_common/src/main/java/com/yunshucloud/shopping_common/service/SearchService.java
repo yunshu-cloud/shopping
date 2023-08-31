@@ -15,6 +15,7 @@ public interface SearchService {
      */
     List<String> autoSuggest(String keyword);
 
+
     /**
      * 搜索商品
      * @param goodsSearchParam 搜索条件
@@ -35,4 +36,3 @@ public interface SearchService {
      */
     void delete(Long id);
 }
-

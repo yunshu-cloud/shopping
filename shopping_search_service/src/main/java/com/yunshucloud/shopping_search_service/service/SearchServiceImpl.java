@@ -5,16 +5,25 @@ import com.yunshucloud.shopping_common.service.SearchService;
 import com.yunshucloud.shopping_search_service.repository.GoodsESRepository;
 import lombok.SneakyThrows;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.AnalyzeRequest;
 import org.elasticsearch.client.indices.AnalyzeResponse;
+import org.elasticsearch.common.text.Text;
+import org.elasticsearch.search.suggest.Suggest;
+import org.elasticsearch.search.suggest.SuggestBuilder;
+import org.elasticsearch.search.suggest.SuggestBuilders;
+import org.elasticsearch.search.suggest.SuggestionBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.elasticsearch.client.elc.ElasticsearchTemplate;
+import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @DubboService
 public class SearchServiceImpl implements SearchService {
@@ -23,6 +32,9 @@ public class SearchServiceImpl implements SearchService {
 
     @Autowired
     private GoodsESRepository goodsESRepository;
+
+    @Autowired
+    private ElasticsearchTemplate template;
 
     /**
      * 分词
@@ -47,10 +59,41 @@ public class SearchServiceImpl implements SearchService {
         return words;
     }
 
+    // 自动补齐
     @Override
     public List<String> autoSuggest(String keyword) {
-        return null;
+        // 1.创建补全条件
+        SuggestBuilder suggestBuilder = new SuggestBuilder();
+        SuggestionBuilder suggestionBuilder = SuggestBuilders
+                .completionSuggestion("tags")
+                .prefix(keyword)
+                .skipDuplicates(true)
+                .size(10);
+
+
+        suggestBuilder.addSuggestion("prefix_suggestion", suggestionBuilder);
+
+
+        // 2.发送请求
+        SearchResponse response = template.suggest(suggestBuilder, IndexCoordinates.of("goods"));
+
+
+        // 3.处理结果
+        List<String> result = response
+                .getSuggest()
+                .getSuggestion("prefix_suggestion")
+                .getEntries()
+                .get(0)
+                .getOptions()
+                .stream()
+                .map(Suggest.Suggestion.Entry.Option::getText)
+                .map(Text::toString)
+                .collect(Collectors.toList());
+
+
+        return result;
     }
+
 
     @Override
     public GoodsSearchResult search(GoodsSearchParam goodsSearchParam) {

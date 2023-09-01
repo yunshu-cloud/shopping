@@ -5,6 +5,7 @@ import com.yunshucloud.shopping_common.service.GoodsService;
 import com.yunshucloud.shopping_common.service.SearchService;
 import com.yunshucloud.shopping_search_service.service.SearchServiceImpl;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.zookeeper.ZooKeeper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,6 +19,8 @@ class ShoppingSearchServiceApplicationTests {
 
 	@DubboReference
 	private GoodsService goodsService;
+
+	private static ZooKeeper zooKeeper;
 	@Test
 	void contextLoads() {
 		List<String> analyze = searchService.analyze("我爱程序员", "ik_pinyin");
@@ -33,6 +36,27 @@ class ShoppingSearchServiceApplicationTests {
 				searchService.syncGoodsToES(goodsDesc);
 			}
 		}
+	}
+
+
+	@Test
+	void testZookeeper(){
+		String host = "192.168.66.100:2181";
+		int sessionTimeout = 10000;
+		try {
+			zooKeeper = new ZooKeeper(host,sessionTimeout, null);
+			System.out.println("Connected to Zookeeper server!");
+		} catch (Exception e){
+			System.out.println("Failed to connect to Zookeeper server");
+			e.printStackTrace();
+		}
+	}
+
+
+	@Test
+	void testAutoSuggest(){
+		List<String> i = searchService.autoSuggest("苹果");
+		System.out.println(i);
 	}
 
 }

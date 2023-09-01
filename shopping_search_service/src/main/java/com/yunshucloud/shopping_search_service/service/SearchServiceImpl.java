@@ -12,11 +12,12 @@ import org.elasticsearch.client.indices.AnalyzeRequest;
 import org.elasticsearch.client.indices.AnalyzeResponse;
 import org.elasticsearch.common.text.Text;
 import org.elasticsearch.search.suggest.Suggest;
+
 import org.elasticsearch.search.suggest.SuggestBuilder;
 import org.elasticsearch.search.suggest.SuggestBuilders;
 import org.elasticsearch.search.suggest.SuggestionBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.elasticsearch.client.elc.ElasticsearchTemplate;
+import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class SearchServiceImpl implements SearchService {
     private GoodsESRepository goodsESRepository;
 
     @Autowired
-    private ElasticsearchTemplate template;
+    private ElasticsearchRestTemplate template;
 
     /**
      * 分词
@@ -95,6 +96,7 @@ public class SearchServiceImpl implements SearchService {
     }
 
 
+
     @Override
     public GoodsSearchResult search(GoodsSearchParam goodsSearchParam) {
         return null;
@@ -137,7 +139,7 @@ public class SearchServiceImpl implements SearchService {
         tags.add(goodsDesc.getBrand().getName()); //品牌名是关键字
         tags.addAll(analyze(goodsDesc.getGoodsName(),"ik_smart"));//商品名分词后为关键词
         tags.addAll(analyze(goodsDesc.getCaption(),"ik_smart"));//副标题分词后为关键词
-
+        goodsES.setTags(tags);
 
         goodsESRepository.save(goodsES);
     }

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ *
  * 在ES中存储的商品实体类
  */
 @Document(indexName = "goods",createIndex = false)
